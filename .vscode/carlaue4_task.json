@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Start CarlaUE4 (Medium Quality)",
+        "type": "shell",
+        "command": "cd C:\\WS\\CARLA_0.9.13\\WindowsNoEditor && CarlaUE4.exe -quality=medium",
+        "presentation": {
+          "reveal": "always"
+        },
+        "problemMatcher": []
+      }
+    ]
+  }
+  

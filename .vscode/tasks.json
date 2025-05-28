@@ -1,0 +1,53 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+	  {
+		"label": "Start CarlaUE4",
+		"type": "shell",
+		"command": "cd C:\\WS\\CARLA_0.9.13\\WindowsNoEditor && CarlaUE4.exe -quality=medium",
+		"presentation": {
+		  "reveal": "always"
+		},
+		"problemMatcher": [],
+		"isBackground": true
+	  },
+	  {
+		"label": "Wait for Carla to Start",
+		"type": "shell",
+		"command": "python C:\\WS\\CARLA_0.9.13\\WindowsNoEditor\\PythonAPI\\examples\\check_carla_ready.py",
+		"presentation": {
+		  "reveal": "always"
+		},
+		"problemMatcher": []
+	  },
+	  {
+		"label": "Run generate_traffic.py",
+		"type": "shell",
+		"command": "cd C:\\WS\\CARLA_0.9.13\\WindowsNoEditor\\PythonAPI\\examples && python generate_traffic.py",
+		"presentation": {
+		  "reveal": "always"
+		},
+		"problemMatcher": []
+	  },
+	  {
+		"label": "Run manual_control_steeringwheel.py",
+		"type": "shell",
+		"command": "cd C:\\WS\\CARLA_0.9.13\\WindowsNoEditor\\PythonAPI\\examples && python manual_control_steeringwheel.py",
+		"presentation": {
+		  "reveal": "always"
+		},
+		"problemMatcher": []
+	  },
+	  {
+		"label": "Start Carla VR Setup",
+		"dependsOn": [
+		  "Start CarlaUE4",
+		  "Wait for Carla to Start",
+		  "Run generate_traffic.py",
+		  "Run manual_control_steeringwheel.py"
+		],
+		"problemMatcher": []
+	  }
+	]
+  }
+  
